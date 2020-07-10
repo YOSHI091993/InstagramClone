@@ -42,6 +42,15 @@ class CommentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+//    var id:Int?
+//    var delegate: touchCellDelegate?
+//    var titleLabel = UILabel();
+//    
+//    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+//        self.delegate?.getNo(self.id!)
+//    }
+    
 
     /*
     // MARK: - Navigation

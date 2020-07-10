@@ -102,15 +102,6 @@
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="263.83928571428572"/>
         </tableViewCell>
-        <viewController id="KPN-4r-3uj">
-            <view key="view" contentMode="scaleToFill" id="kQU-X7-6X5">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                <viewLayoutGuide key="safeArea" id="7Vg-7d-qBc"/>
-            </view>
-            <point key="canvasLocation" x="902" y="277"/>
-        </viewController>
     </objects>
     <resources>
         <image name="comment" width="40" height="38"/>
