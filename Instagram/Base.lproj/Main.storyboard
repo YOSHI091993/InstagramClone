@@ -152,7 +152,7 @@
         <!--Comment View Controller-->
         <scene sceneID="WJ7-bA-oGM">
             <objects>
-                <viewController storyboardIdentifier="second" id="XvL-Tw-Ng7" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="second" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XvL-Tw-Ng7" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p9n-0r-hb7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,7 @@
                                     <action selector="handleCommentButton:" destination="XvL-Tw-Ng7" eventType="touchUpInside" id="Ju6-OP-42G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kV4-El-qhy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kV4-El-qhy">
                                 <rect key="frame" x="57" y="314" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="BTq-9Q-udT"/>
@@ -197,6 +197,7 @@
                             <constraint firstItem="qh0-k4-WiN" firstAttribute="leading" secondItem="3PT-rp-gx9" secondAttribute="leading" constant="10" id="Jxc-gT-yRy"/>
                             <constraint firstItem="kV4-El-qhy" firstAttribute="centerX" secondItem="p9n-0r-hb7" secondAttribute="centerX" id="SAs-DR-Q2o"/>
                             <constraint firstItem="9Ga-CU-sht" firstAttribute="centerX" secondItem="p9n-0r-hb7" secondAttribute="centerX" id="Xhw-h4-2sz"/>
+                            <constraint firstItem="kV4-El-qhy" firstAttribute="top" secondItem="9Ga-CU-sht" secondAttribute="bottom" constant="10" id="vCN-gT-CZm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3PT-rp-gx9"/>
                     </view>

@@ -20,7 +20,6 @@
 		952F0FAE2493741500DF8D2D /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F0FAD2493741500DF8D2D /* PostData.swift */; };
 		952F0FB72493995400DF8D2D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F0FB52493995400DF8D2D /* PostTableViewCell.swift */; };
 		952F0FB82493995400DF8D2D /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952F0FB62493995400DF8D2D /* PostTableViewCell.xib */; };
-		9559624224B85EE500332326 /* Instagram in Resources */ = {isa = PBXBuildFile; fileRef = 9559624124B85EE500332326 /* Instagram */; };
 		959C055224B3377700BB454A /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C055124B3377700BB454A /* CommentViewController.swift */; };
 		95A673412490CFF900591F2E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A673402490CFF900591F2E /* TabBarController.swift */; };
 		95A673432490E7DD00591F2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95A673422490E7DC00591F2E /* GoogleService-Info.plist */; };
@@ -45,7 +44,7 @@
 		952F0FAD2493741500DF8D2D /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		952F0FB52493995400DF8D2D /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		952F0FB62493995400DF8D2D /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
-		9559624124B85EE500332326 /* Instagram */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Instagram; sourceTree = "<group>"; };
+		9559624124B85EE500332326 /* Instagram */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Instagram; sourceTree = "<group>"; };
 		95785F2D24B30CD500A35496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		959C055124B3377700BB454A /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		95A673402490CFF900591F2E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -190,7 +189,6 @@
 				9515BE83248FA04E007DF0BF /* LaunchScreen.storyboard in Resources */,
 				95A673432490E7DD00591F2E /* GoogleService-Info.plist in Resources */,
 				952F0FB82493995400DF8D2D /* PostTableViewCell.xib in Resources */,
-				9559624224B85EE500332326 /* Instagram in Resources */,
 				9515BE80248FA04D007DF0BF /* Assets.xcassets in Resources */,
 				9515BE7E248FA04C007DF0BF /* Main.storyboard in Resources */,
 			);

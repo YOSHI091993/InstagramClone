@@ -105,22 +105,24 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
                let touch = event.allTouches?.first
                let point = touch!.location(in: self.tableView)
                let indexPath = tableView.indexPathForRow(at: point)
-               
+        
                let postData = postArray[indexPath!.row]
                
-//               if let myid = Auth.auth().currentUser?.uid {
-//                   var updateValue: FieldValue
-//                   if postData.isCommented {
-//                       updateValue = FieldValue.arrayRemove([myid])
-//               } else {
-//                   updateValue = FieldValue.arrayUnion([myid])
-//               }
+               if let myid = Auth.auth().currentUser?.uid {
+                    var updateValue: FieldValue
+                    if postData.isCommented {
+                       updateValue = FieldValue.arrayRemove([myid])
+                    } else {
+                        updateValue = FieldValue.arrayUnion([myid])
+                }
                
-//               let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-//               postRef.updateData(["comments": updateValue])
-//               }
+               let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+               postRef.updateData(["comments": updateValue])
+               }
         
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "CommentViewController") as! CommentViewController; self.present(secondViewController, animated: true, completion: nil)
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "second") as! CommentViewController; self.present(secondViewController, animated: true, completion: nil)
+        
+//        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController self.present(secondViewController, animated: true, completion: nil)
         
         
     }
