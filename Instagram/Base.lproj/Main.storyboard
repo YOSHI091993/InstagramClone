@@ -232,7 +232,7 @@
         <!--ホーム-->
         <scene sceneID="OFB-Hr-7q7">
             <objects>
-                <viewController id="Hc8-ko-FiZ" customClass="HomeViewController" customModule="Instagram" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hc8-ko-FiZ" customClass="HomeViewController" customModule="Instagram" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AYC-xn-xkF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

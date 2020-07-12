@@ -21,8 +21,8 @@ class CommentViewController: UIViewController {
         let name = Auth.auth().currentUser?.displayName
         let commentDic = [
             "name": name!,
-            "caption": self.commentField.text!,
-            "date": FieldValue.serverTimestamp(),
+            "comments": self.commentField.text!,
+//            "date": FieldValue.serverTimestamp(),
             ] as [String : Any]
             commentRef.setData(commentDic)
                    
