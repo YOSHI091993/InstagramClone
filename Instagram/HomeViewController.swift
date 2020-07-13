@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -64,7 +64,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
@@ -75,7 +75,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         return cell
     }
     
-   
+    
     
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: likeボタンがタップされました。")
@@ -90,57 +90,57 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
             var updateValue: FieldValue
             if postData.isLiked {
                 updateValue = FieldValue.arrayRemove([myid])
-        } else {
-            updateValue = FieldValue.arrayUnion([myid])
-        }
-        
-        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-        postRef.updateData(["likes": updateValue])
+            } else {
+                updateValue = FieldValue.arrayUnion([myid])
+            }
+            
+            let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+            postRef.updateData(["likes": updateValue])
         }
     }
     
     @objc func commentButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: commentボタンがタップされました。")
-               
-               let touch = event.allTouches?.first
-               let point = touch!.location(in: self.tableView)
-               let indexPath = tableView.indexPathForRow(at: point)
         
-               let postData = postArray[indexPath!.row]
-               
-               if let mycomment = Auth.auth().currentUser?.uid {
-                    var updateComment: FieldValue
-                    if postData.isCommented {
-                       updateComment = FieldValue.arrayRemove([mycomment])
-                    } else {
-                        updateComment = FieldValue.arrayUnion([mycomment])
-                }
-               
-               let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-               postRef.updateData(["comments": updateComment])
-               }
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "second") as! CommentViewController; self.present(secondViewController, animated: true, completion: nil)
+        let postData = postArray[indexPath!.row]
         
-//        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController self.present(secondViewController, animated: true, completion: nil)
+//                       if let mycomment = Auth.auth().currentUser?.uid {
+//                            var updateComment: FieldValue
+//                            if postData.isCommented {
+//                               updateComment = FieldValue.arrayRemove([mycomment])
+//                            } else {
+//                                updateComment = FieldValue.arrayUnion([mycomment])
+//                        }
+//        
+//                       let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+//                       postRef.updateData(["comments": updateComment])
         
-        
+         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "second") as! CommentViewController;
+        secondViewController.postId = postData.id
+        self.present(secondViewController, animated: true, completion: nil)
     }
     
-    
+}
+
+
 
 //    protocol touchCellDelegate {
 //        func getNo(id: Int) -> Void
 //    }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-}
+//}
+//}

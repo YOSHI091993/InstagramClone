@@ -12,26 +12,28 @@ import SVProgressHUD
 
 class CommentViewController: UIViewController {
     
+    var postId: String = ""
+    
     @IBOutlet weak var commentField: UITextField!
     
     @IBAction func handleCommentButton(_ sender: Any) {
-        let commentRef = Firestore.firestore().collection(Const.CommentPath).document()
+        let commentRef = Firestore.firestore().collection(Const.PostPath).document(postId)
         SVProgressHUD.show()
         
         let name = Auth.auth().currentUser?.displayName
         let commentDic = [
             "name": name!,
             "comments": self.commentField.text!,
-//            "date": FieldValue.serverTimestamp(),
             ] as [String : Any]
             commentRef.setData(commentDic)
-                   
+        
         SVProgressHUD.showSuccess(withStatus: "コメントしました")
                    
         UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
-               }
+    print("DEBUG_PRINT: \(postId)")
+    }
     
-
+ 
     @IBAction func handleCommentCancelButton(_ sender: Any) {
        self.dismiss(animated: true, completion: nil)
     }
