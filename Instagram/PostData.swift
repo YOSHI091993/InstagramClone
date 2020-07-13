@@ -48,8 +48,8 @@ class PostData: NSObject {
         
 //        self.comments = postDic["comments"] as? String
         
-        if let mycomment = Auth.auth().currentUser?.uid {
-            if self.comments.firstIndex(of: mycomment) != nil {
+        if let myid = Auth.auth().currentUser?.uid {
+            if self.comments.firstIndex(of: myid) != nil {
                 self.isCommented = true
             }
         }

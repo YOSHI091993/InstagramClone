@@ -108,17 +108,6 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         
         let postData = postArray[indexPath!.row]
         
-//                       if let mycomment = Auth.auth().currentUser?.uid {
-//                            var updateComment: FieldValue
-//                            if postData.isCommented {
-//                               updateComment = FieldValue.arrayRemove([mycomment])
-//                            } else {
-//                                updateComment = FieldValue.arrayUnion([mycomment])
-//                        }
-//        
-//                       let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-//                       postRef.updateData(["comments": updateComment])
-        
          let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "second") as! CommentViewController;
         secondViewController.postId = postData.id
         self.present(secondViewController, animated: true, completion: nil)
