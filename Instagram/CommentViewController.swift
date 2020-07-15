@@ -14,29 +14,25 @@ class CommentViewController: UIViewController {
     
     var postId: String = ""
     
-    
-   
-    
     @IBOutlet weak var commentField: UITextField!
     
     @IBAction func handleCommentButton(_ sender: Any) {
 //        let commentRef = Firestore.firestore().collection(Const.PostPath).document(postId)
 //        SVProgressHUD.show()
 //
-//        _ = Auth.auth().currentUser?.displayName
-//        let commentDic = [
-//            "name": name!,
-//            "comments": "",
-//            ] as [String : Any]
-//            commentRef.updateData(commentDic)
+        let name = Auth.auth().currentUser?.displayName
 //
-        let commentData: String = "name: comments"
+        let commentText = self.commentField.text!
+        let commentData = "\(name!) : \(commentText)"
+        
+//        let commentData = commentText
+        
         let updateValue = FieldValue.arrayUnion([commentData])
      
-        
-        let commentRef = Firestore.firestore().collection(Const.PostPath).document(postId)
-        commentRef.updateData(["comments": updateValue])
-        SVProgressHUD.show()
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(postId)
+//        commentRef?
+        postRef.updateData(["comments": updateValue])
+//        SVProgressHUD.show()
         
         SVProgressHUD.showSuccess(withStatus: "コメントしました")
                    
