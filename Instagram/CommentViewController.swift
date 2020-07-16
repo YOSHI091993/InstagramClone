@@ -20,14 +20,27 @@ class CommentViewController: UIViewController {
 //        let commentRef = Firestore.firestore().collection(Const.PostPath).document(postId)
 //        SVProgressHUD.show()
 //
-        let name = Auth.auth().currentUser?.displayName
+//      let name = Auth.auth().currentUser?.displayName
 //
         let commentText = self.commentField.text!
-        let commentData = "\(name!) : \(commentText)"
+//        let commentData = "\(name!) : \(commentText)"
         
 //        let commentData = commentText
         
-        let updateValue = FieldValue.arrayUnion([commentData])
+//        var commentos:String = name + commenter
+        
+       // 空の文字列型の変数を用意
+//       var comment_text:String = ""
+//       // 配列
+//       let commenter = ["name!", "commentText"]
+//       // for文で取り出し
+//       for value in commenter {
+//         print(value)
+//         comment_text += value
+//       }
+//        print(comment_text)
+        
+        let updateValue = FieldValue.arrayUnion([commentText])
      
         let postRef = Firestore.firestore().collection(Const.PostPath).document(postId)
 //        commentRef?
