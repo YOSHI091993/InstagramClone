@@ -25,6 +25,8 @@ class PostData: NSObject {
         
         let postDic = document.data()
         
+        let name = Auth.auth().currentUser?.displayName
+        
         self.name = postDic["name"] as? String
         
         self.caption = postDic["caption"] as? String

@@ -20,7 +20,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
 //    @IBOutlet weak var commentLabel: UIButton!
   
-    
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,24 +59,18 @@ class PostTableViewCell: UITableViewCell {
             self.likeButton.setImage(buttonImage, for: .normal)
         }
         
-        
+        var commentText:String = ""
         
         if postData.comments.count == 0 {
             return
         } else {
             for i in 0 ..< postData.comments.count {
-                self.commentLabel.text! += "\(postData.name!) :\(postData.comments[i])\n"
+                commentText += "\(postData.comments[i])\n"
             }
+//        self.commentLabel.text! = "\(postData.name!) : \(commentText) "
+             self.commentLabel.text! = commentText
         }
         
-//        if postData.isCommented {
-//                   self.commentField.text =
-//               } else {
-//                   let buttonImage = UIImage(named: "like_none")
-//                   self.likeButton.setImage(buttonImage, for: .normal)
-//               }
-       
-
         }
-        
+    
     }

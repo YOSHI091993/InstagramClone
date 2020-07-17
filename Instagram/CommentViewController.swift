@@ -17,35 +17,29 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var commentField: UITextField!
     
     @IBAction func handleCommentButton(_ sender: Any) {
-//        let commentRef = Firestore.firestore().collection(Const.PostPath).document(postId)
-//        SVProgressHUD.show()
-//
-//      let name = Auth.auth().currentUser?.displayName
-//
+
         let commentText = self.commentField.text!
-//        let commentData = "\(name!) : \(commentText)"
+
+        let name = Auth.auth().currentUser?.displayName
         
-//        let commentData = commentText
+        let commenter = "\(name!) : \(commentText)"
         
-//        var commentos:String = name + commenter
-        
-       // 空の文字列型の変数を用意
-//       var comment_text:String = ""
-//       // 配列
-//       let commenter = ["name!", "commentText"]
-//       // for文で取り出し
-//       for value in commenter {
-//         print(value)
-//         comment_text += value
-//       }
-//        print(comment_text)
-        
-        let updateValue = FieldValue.arrayUnion([commentText])
+        let updateValue = FieldValue.arrayUnion([commenter])
      
         let postRef = Firestore.firestore().collection(Const.PostPath).document(postId)
-//        commentRef?
+
+//        var comment_text:String = ""
+//        
+//        // 配列
+//      
+//        // for文で取り出し
+//        for value in commenter {
+//          print(value)
+//          comment_text += value
+//        }
+//         print(comment_text)
+        
         postRef.updateData(["comments": updateValue])
-//        SVProgressHUD.show()
         
         SVProgressHUD.showSuccess(withStatus: "コメントしました")
                    
@@ -63,15 +57,6 @@ class CommentViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    
-//    var id:Int?
-//    var delegate: touchCellDelegate?
-//    var titleLabel = UILabel();
-//    
-//    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-//        self.delegate?.getNo(self.id!)
-//    }
     
 
     /*
